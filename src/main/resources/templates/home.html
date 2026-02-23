@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<h2>Welcome <span th:text="${username}"></span> 🎉</h2>
+
+<br>
+
+<a th:href="@{/history}">View Login History</a>
+
+<br><br>
+
+<a th:href="@{/logout}">Logout</a>
+
+</body>
+</html>

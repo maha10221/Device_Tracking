@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login History</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<h2>Your Login History</h2>
+
+<table border="1">
+
+    <tr>
+        <th>IP Address</th>
+        <th>Browser</th>
+        <th>OS</th>
+        <th>Device</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Login Time</th>
+    </tr>
+
+    <tr th:each="h : ${historyList}">
+
+        <td th:text="${h.ipAddress}"></td>
+
+        <td th:text="${h.browser}"></td>
+
+        <td th:text="${h.os}"></td>
+
+        <td th:text="${h.deviceType}"></td>
+
+        <td th:text="${h.city}"></td>
+
+        <td th:text="${h.state}"></td>
+
+        <td th:text="${h.country}"></td>
+
+        <!-- ✅ formatted date & time -->
+        <td th:text="${#temporals.format(h.loginTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<a th:href="@{/home}">Back to Home</a>
+
+</body>
+</html>
